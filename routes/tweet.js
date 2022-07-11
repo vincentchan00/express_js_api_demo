@@ -9,8 +9,7 @@ router.get("/", tweet.findAll);
 // router.get("/:id", tweet.findOne);
 router.put("/:id", checkLogin,tweet.update);
 router.delete("/:id", checkLogin,tweet.delete);
-router.post("/like/:id", checkLogin,tweet.like);
-router.post("/retweet/:id", checkLogin,tweet.like);
+router.put("/like/:id", checkLogin,tweet.like);
 function checkLogin(req, res,next){
     if(req.session.loggedin){
         next();
